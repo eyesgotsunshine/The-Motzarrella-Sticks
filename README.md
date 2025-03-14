@@ -11,9 +11,12 @@ E Bethel was here
 3. step 3
 
 **bold**
+
+Terry putthe bottom part - Stef
+
 *italicise*
 ***bold and italicize***
 
-[hello world](websit
+[hello world](websit)
 
 cout << "Hello, Madzilla here." << endl;

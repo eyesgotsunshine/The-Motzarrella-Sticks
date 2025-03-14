@@ -12,7 +12,7 @@ E Bethel was here
 
 **bold**
 
-Terry putthe bottom part - Stef
+Terry put the bottom part - Stef
 
 *italicise*
 ***bold and italicize***

@@ -5,7 +5,8 @@
 ### - Evan Bethel
 ### - Terry Matamet Salas
 
-1. step 1
+E Bethel was here
+
 2. step 2
 3. step 3
 

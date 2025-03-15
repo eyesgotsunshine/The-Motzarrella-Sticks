@@ -4,6 +4,7 @@
 ### - Mark Madla
 ### - Evan Bethel
 *Step 1 - E Bethel was here again*
+
 *Step 2 - Part C, ParticleSystems class*
 ### - Terry Matamet Salas
 

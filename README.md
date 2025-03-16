@@ -3,7 +3,7 @@
 ### - Stefanie Motsenbocker (Team Captain)
 - In charge of part A) A doubly linked list node class (they call it "Cell" in the instructions) that holds Particles.
 ### - Mark Madla
-- In charge of part D) 
+- In charge of part D)  A ParticleGraphics class that can change the color being drawn (private member variable with getter/setter) and methods for drawing a point, a rectangle, an oval, a polygon, and a line. The constructor/getter/setter should be written now, the other methods should be stubbed out.
 ### - Evan Bethel
 - In charge of *Part C, ParticleSystems class*
 ### - Terry Matamet Salas

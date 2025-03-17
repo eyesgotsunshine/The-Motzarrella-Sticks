@@ -5,23 +5,23 @@ using namespace std;
 
 class Cell { // holds particles
 	private:
-	Particle data; // want the type to be Particle
+	ParticleGraphics data; // want the type to be Particle
  	Cell *prev = nullptr;
     	Cell *next = nullptr;
 
 	public:
-	Cell(int newData = nullptr, Cell *prev_new = nullptr, Cell *next_new = nullptr) : 
+	Cell(ParticleGraphics newData, Cell *prev_new = nullptr, Cell *next_new = nullptr) : 
         data(newData), prev(prev_new), next(next_new) {}
 
 ~Cell() {
 	
 }
 
-Particle getData() const { 
+ParticleGraphics getData() const { 
 	return data; 
 }
 
-void setData(int *newData) { 
+void setData(ParticleGraphics newData) { 
 	data = newData; 
 }
 

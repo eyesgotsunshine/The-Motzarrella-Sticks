@@ -18,12 +18,12 @@ void die() {
 
 // A - Stefanie
 // Test default constructor
-/*TEST(CellTest, DefaultConstructor) {
+TEST(CellTest, DefaultConstructor) {
   Cell cell;
   EXPECT_EQ(cell.getData(), nullptr);
   EXPECT_EQ(cell.getNext(), nullptr);
   EXPECT_EQ(cell.getPrev(), nullptr);
-} */
+} 
   
 // B - Terry
 //TEST

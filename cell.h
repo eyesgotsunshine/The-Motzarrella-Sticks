@@ -21,7 +21,7 @@ ParticleGraphics getData() const {
 	return data; 
 }
 
-void setData(int *newData) { 
+void setData(ParticleGraphics newData) { 
 	data = newData; 
 }
 

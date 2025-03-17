@@ -20,8 +20,8 @@ void die() {
 // A - Stefanie
 // Test default constructor
 TEST(CellTest, DefaultConstructor) {
- // ParticleGraphics 2;
-  Cell cell(2);
+  ParticleGraphics p;
+  Cell cell(p);
   //EXPECT_EQ(cell.getData(), 2);
   EXPECT_EQ(cell.getNext(), nullptr);
   EXPECT_EQ(cell.getPrev(), nullptr);

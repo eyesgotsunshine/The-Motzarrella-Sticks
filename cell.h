@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include "particleSys.h"
 #include "particleGraphics.h"

@@ -15,3 +15,26 @@ void die() {
   cout << "BAD INPUT\n";
 //	exit(EXIT_FAILURE);
 }	
+
+// A - Stefanie
+// Test default constructor
+TEST(CellTest, DefaultConstructor) {
+  Cell cell;
+  EXPECT_EQ(cell.getData(), nullptr);
+  EXPECT_EQ(cell.getNext(), nullptr);
+  EXPECT_EQ(cell.getPrev(), nullptr);
+}
+  
+// B - Terry
+//TEST
+  
+// C - Evan
+//TEST
+  
+// D - Mark 
+//TEST
+  
+  int main (int argc, char **argv){
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+  }

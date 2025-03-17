@@ -1,9 +1,13 @@
-#include "Cell.h"
+#include "cell.h"
 
-class ParticleSystem {
-private:
-    int size;
-
-public:
-    ParticleSystem(size(0) {}
-};
+class Particle {
+    public:
+    
+    private:
+        int x, y;
+    
+    public:
+        Particle(int x, int y)
+            : x(x), y(y) {}
+    };
+    

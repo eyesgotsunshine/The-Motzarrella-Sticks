@@ -10,7 +10,7 @@ class Cell { // holds particles
     	Cell *next = nullptr;
 
 	public:
-	Cell(int *newData = nullptr, Cell *prev_new = nullptr, Cell *next_new = nullptr) : 
+	Cell(Cell *newData = nullptr, Cell *prev_new = nullptr, Cell *next_new = nullptr) : 
         data(newData), prev(prev_new), next(next_new) {}
 
 ~Cell() {

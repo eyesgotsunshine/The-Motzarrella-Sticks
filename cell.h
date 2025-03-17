@@ -14,10 +14,10 @@ class Cell { // holds particles
         data(newData), prev(prev_new), next(next_new) {}
 
 ~Cell() {
-	//delete data;
+	
 }
 
-Cell *getData() const { 
+Particle getData() const { 
 	return data; 
 }
 

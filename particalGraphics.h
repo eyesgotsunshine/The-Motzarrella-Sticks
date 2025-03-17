@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <string> 
-
+#include "particle.h"
+#include "particalSystem.h""
 class ParticalGraphics{
 	std::string color;// private value
 
@@ -15,24 +16,29 @@ class ParticalGraphics{
 		color = newColor;
 	}
 	
-	void drawPoint(int x, in y){
-		std::cout << "Drawing point at (" << x << ", " << y << ") with color "  << color << std::endl;//Point Stub
+	void drawPoint(int x, int y){
+		//std::cout << "Drawing point at (" << x << ", " << y << ") with color "  << color << std::endl;//Point Stub
+		return 0;
 	}
 	
 	void drawRectangle(int x, int y, int width, int hight){
-		std::cout << "Drawing retangle at (" << x << ", " << y << ") with width " << width << " and hight " << hight << " with color " << color << std::endl;// Rectangle Stub
+		//std::cout << "Drawing retangle at (" << x << ", " << y << ") with width " << width << " and hight " << hight << " with color " << color << std::endl;// Rectangle Stub
+		return 0;
 	}
 	
 	void drawOval(int x, int y, int width, int hight){
-		std::cout << "Drawing oval at (" << x << ", " << y << ") with width " << width << " and hight " << " with color " << color << std::endl;// Oval Stub
+		//std::cout << "Drawing oval at (" << x << ", " << y << ") with width " << width << " and hight " << " with color " << color << std::endl;// Oval Stub
+		return 0;
 	}
 	
 	void drawPolygon(const std::vector<std::pair<int, int>& points){
-		std::cout << "Drawing polygon with " << points.size << " points with color  " << color << std::endl;// Polygon Stub
+		//std::cout << "Drawing polygon with " << points.size << " points with color  " << color << std::endl;// Polygon Stub
+		return 0;
 	}
 	void drawLine(int x1, int y1, int x2, int y2) {
-    	std::cout << "Drawing line from (" << x1 << ", " << y1 << ") to (" << x2 << ", " << y2 << ") with color " << color << std::endl;
-    }
+    	//std::cout << "Drawing line from (" << x1 << ", " << y1 << ") to (" << x2 << ", " << y2 << ") with color " << color << std::endl;
+    	return 0;
+	}
 };
 
 int main() { //test code I wrote on onlineGBD

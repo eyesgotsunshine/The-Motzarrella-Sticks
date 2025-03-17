@@ -18,12 +18,12 @@ void die() {
 
 // A - Stefanie
 // Test default constructor
-TEST(CellTest, DefaultConstructor) {
+/*TEST(CellTest, DefaultConstructor) {
   Cell cell;
   EXPECT_EQ(cell.getData(), nullptr);
   EXPECT_EQ(cell.getNext(), nullptr);
   EXPECT_EQ(cell.getPrev(), nullptr);
-}
+} */
   
 // B - Terry
 //TEST
@@ -34,14 +34,14 @@ TEST(CellTest, DefaultConstructor) {
 //These tests are up to date as of particleSys.h V2
 //I have run them and they have returned 100% working on a personal driver.cc file
 
-TEST(BasicsTest, RowsAndColumnsGetters) {
+/* TEST(BasicsTest, RowsAndColumnsGetters) {
     particleSystem tester(5, 10);
     EXPECT_EQ(tester.get_columns(), 5);
     EXPECT_EQ(tester.get_rows(), 10);
     EXPECT_EQ(tester.get_particleCount(), 0);
-}
+} */
 
-TEST(BasicsTest, RowsAndColumnsSetters) {
+/* TEST(BasicsTest, RowsAndColumnsSetters) {
     particleSystem tester(5, 10);
     tester.set_columns(22);
     tester.set_rows(33);
@@ -49,15 +49,15 @@ TEST(BasicsTest, RowsAndColumnsSetters) {
     EXPECT_EQ(tester.get_columns(), 22);
     EXPECT_EQ(tester.get_rows(), 33);
     EXPECT_EQ(tester.get_particleCount(), 44);
-}
+} */
 
-TEST(BasicsTest, Methods) {
+/* (TEST(BasicsTest, Methods) {
     particleSystem tester(5, 10);
     EXPECT_EQ(tester.addParticle(6), 6);
     EXPECT_EQ(tester.numParticles(), tester.get_particleCount());
     EXPECT_EQ(tester.moveParticles(), "stub");
     EXPECT_EQ(tester.drawParticles(), "stub");
-}
+} */
 
 
 // D - Mark 

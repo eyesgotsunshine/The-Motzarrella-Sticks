@@ -1,6 +1,6 @@
 #include <iostream>
 #include "particleSys.h"
-#include "particalGraphics.h"
+#include "particleGraphics.h"
 using namespace std;
 
 class Cell { // holds particles

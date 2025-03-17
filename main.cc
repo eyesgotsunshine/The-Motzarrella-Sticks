@@ -19,8 +19,9 @@ void die() {
 // A - Stefanie
 // Test default constructor
 TEST(CellTest, DefaultConstructor) {
-  Cell cell;
-  EXPECT_EQ(cell.getData(), nullptr);
+  Particle p;
+  Cell cell(p);
+  EXPECT_EQ(cell.getData(), p);
   EXPECT_EQ(cell.getNext(), nullptr);
   EXPECT_EQ(cell.getPrev(), nullptr);
 } 

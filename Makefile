@@ -12,7 +12,7 @@ all: $(EXEC)
 
 # Link all object files to create the executable
 $(EXEC): $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) -o $@ $^ -lgtest
 
 # Compile each .cc file into a .o file
 %.o: %.cc %.h

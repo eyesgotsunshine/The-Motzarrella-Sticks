@@ -8,6 +8,7 @@
 #include "cell.h"
 #include <string>
 #include "particleSys.h"
+#include "particleGraphics.h"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ void die() {
 // A - Stefanie
 // Test default constructor
 TEST(CellTest, DefaultConstructor) {
-  Particle p;
+  ParticleGraphics p;
   Cell cell(p);
   EXPECT_EQ(cell.getData(), p);
   EXPECT_EQ(cell.getNext(), nullptr);

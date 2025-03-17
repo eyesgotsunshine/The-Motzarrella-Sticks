@@ -5,7 +5,7 @@ using namespace std;
 
 class Cell { // holds particles
 	private:
-	Particle data; // want the type to be Particle
+	ParticleGraphics data; // want the type to be Particle
  	Cell *prev = nullptr;
     	Cell *next = nullptr;
 
@@ -17,7 +17,7 @@ class Cell { // holds particles
 	
 }
 
-Particle getData() const { 
+ParticleGraphics getData() const { 
 	return data; 
 }
 

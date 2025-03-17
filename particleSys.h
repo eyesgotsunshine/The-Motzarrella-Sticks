@@ -1,4 +1,6 @@
 #include <iostream>
+//#include "particle.h" TODO: Uncomment when finished
+//#include "cell.h" TODO: Uncomment when finished
 using namespace std;
 
 ///////////////////////
@@ -89,21 +91,21 @@ class particleSystem {
 	//Class Methods//
 	/////////////////
 	
-	void addParticle(int placeholder = 0){
-		cout << "If you see your number here, this works: " << placeholder << endl; //TODO: Actually implement this with teamate particle class and linked list class
+	int addParticle(int placeholder = 0){
+		return placeholder; //TODO: Actually implement this with teamate particle class and linked list class
 	}
 	
 	int numParticles(){
-		cout << "numParticles works" << endl; //TODO: Remove this line after testing
+	 //TODO: Remove this line after testing
 		return get_particleCount();
 	}
 
-	void moveParticles(){
-		cout << "This is the stub for moveParticles, YIPPEEEE!" << endl; //TODO: Unstub this function when ready
+	string moveParticles(){
+		return "stub"; //TODO: Unstub this function when ready
 	}
 
-	void drawParticles(){
-		cout << "This is the stub for drawParticles, YOWZAAA!" << endl;	// TODO: Unstub this function when ready
+	string drawParticles(){
+		return "stub";	// TODO: Unstub this function when ready
 	}
 
 	//Apparently some other method goes here that we need

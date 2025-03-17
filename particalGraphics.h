@@ -2,7 +2,9 @@
 #include <vector>
 #include <string> 
 #include "particle.h"
-#include "particalSystem.h""
+#include "particalSystem.h"
+#include "/public/colors.h"
+
 class ParticalGraphics{
 	std::string color;// private value
 

@@ -5,7 +5,7 @@ using namespace std;
 
 class Cell { // holds particles
 	private:
-	int data; // want the type to be Particle
+	Cell data; // want the type to be Particle
  	Node *prev = nullptr;
     	Node *next = nullptr;
 

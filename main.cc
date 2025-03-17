@@ -30,7 +30,36 @@ TEST(CellTest, DefaultConstructor) {
   
 // C - Evan
 //TEST
-  
+
+//These tests are up to date as of particleSys.h V2
+//I have run them and they have returned 100% working on a personal driver.cc file
+
+TEST(BasicsTest, RowsAndColumnsGetters) {
+    particleSystem tester(5, 10);
+    EXPECT_EQ(tester.get_columns(), 5);
+    EXPECT_EQ(tester.get_rows(), 10);
+    EXPECT_EQ(tester.get_particleCount(), 0);
+}
+
+TEST(BasicsTest, RowsAndColumnsSetters) {
+    particleSystem tester(5, 10);
+    tester.set_columns(22);
+    tester.set_rows(33);
+    tester.set_particleCount(44);
+    EXPECT_EQ(tester.get_columns(), 22);
+    EXPECT_EQ(tester.get_rows(), 33);
+    EXPECT_EQ(tester.get_particleCount(), 44);
+}
+
+TEST(BasicsTest, Methods) {
+    particleSystem tester(5, 10);
+    EXPECT_EQ(tester.addParticle(6), 6);
+    EXPECT_EQ(tester.numParticles(), tester.get_particleCount());
+    EXPECT_EQ(tester.moveParticles(), "stub");
+    EXPECT_EQ(tester.drawParticles(), "stub");
+}
+
+
 // D - Mark 
 //TEST
   

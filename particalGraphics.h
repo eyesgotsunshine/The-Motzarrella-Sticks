@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <string> 
-#include "particle.h"
+#include "cell.h"
+#include "particalClass.h"
 #include "particalSystem.h"
 #include "/public/colors.h"
 

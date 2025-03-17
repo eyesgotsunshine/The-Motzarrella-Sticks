@@ -8,10 +8,10 @@ class Cell { // holds particles
 	Particle data; // want the type to be Particle
  	Cell *prev = nullptr;
     	Cell *next = nullptr;
-
+/*
 	public:
-	Cell(int newData = nullptr, Node prev_new = nullptr, next_new = nullptr) : 
-        data(newData), prev(prev_new), next(next_new) {}
+	//Cell(int newData = nullptr, Node prev_new = nullptr, next_new = nullptr) : 
+        //data(newData), prev(prev_new), next(next_new) {}
 
 ~Cell() {
 	//delete data;
@@ -39,6 +39,6 @@ Cell *getPrev() const {
 
 void setPrev(Cell *prev_new) { 
 	prev = prev_new; 
-}
+}*/
 };
 

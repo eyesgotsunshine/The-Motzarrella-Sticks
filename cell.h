@@ -5,13 +5,13 @@ using namespace std;
 
 class Cell {
 	private:
-	Particle data;
-    Cell *prev = nullptr;
-    Cell *next = nullptr;
+	int data;
+ 	Cell *prev = nullptr;
+    	Cell *next = nullptr;
 
 	public:
 
-	Cell(Particle* p = nullptr, Cell* prev = nullptr, Cell* next = nullptr)
+	Cell(p = nullptr, Cell* prev = nullptr, Cell* next = nullptr)
 	: data(p), prev(prev), next(next) {}
 
 ~Cell() {

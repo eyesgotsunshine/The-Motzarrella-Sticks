@@ -47,14 +47,3 @@ class Particle {
 			cout << "Drawing particle at (" << x << ", " << y << ")" << endl;
 		}
 };
-
-int main() {
-	vector<Particle> particles;
-
-	for (auto& particle : particles) {
-		particle.physics();
-		particle.draw();
-	}
-
-	return 0;
-}

@@ -37,7 +37,7 @@ class particleSystem {
 	int columns = 0;
 	int rows = 0;
 	Cell *head = nullptr;  // Head pointer for linked list
-    	Cell *tail = nullptr;  // Tail pointer for linked list
+    Cell *tail = nullptr;  // Tail pointer for linked list
 	int particleCount = 0;
 
 	public:
@@ -54,7 +54,15 @@ class particleSystem {
         	particleCount = 0;
 	}
 
-
+	// Destructor - clean up memory (delete linked list nodes)
+	~particleSystem() {
+		Cell *current = head;  // Start at the head 
+		while (current != nullptr) {
+			Cell *temp = current;     // Store current node
+	current = current->getNext();
+			delete temp;              // Delete current node
+		}
+}
 	///////////
 	//Getters//
 	///////////
@@ -122,16 +130,6 @@ class particleSystem {
 
 	//Apparently some other method goes here that we need
 	//Waiting for further explanation
-
-	// Destructor - clean up memory (delete linked list nodes)
-    	~particleSystem() {
-        	Cell *current = head;  // Start at the head 
-        	while (current != nullptr) {
-            	Cell *temp = current;     // Store current node
-		current = current->getNext();
-            	delete temp;              // Delete current node
-       	 }
-    }
 
 };
 

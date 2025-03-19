@@ -5,16 +5,16 @@ main.o: main.cc cell.h particleSys.h particleGraphics.h ParticleClass.h
 	g++ -g -c -fsanitize=address -std=c++23 -fPIC main.cc -lgtest 
 
 particleSys.o: particleSys.h
-	g++ -g -o -fsanitize=address -std=c++23 -fPIC particleSys.h -lgtest 
+	g++ -g -c -fsanitize=address -std=c++23 -fPIC particleSys.h -lgtest 
 
 cell.o: cell.h
-	g++ -g -o -fsanitize=address -std=c++23 -fPIC cell.h -lgtest 
+	g++ -g -c -fsanitize=address -std=c++23 -fPIC cell.h -lgtest 
 
 particleGraphics.o: particleGraphis.h
-	g++ -g -o -fsanitize=address -std=c++23 -fPIC particleGraphics.h -lgtest 
+	g++ -g -c -fsanitize=address -std=c++23 -fPIC particleGraphics.h -lgtest 
 
 ParticleClass.o: ParticleClass.h
-	g++ -g -o -fsanitize=address -std=c++23 -fPIC ParticleClass.h -lgtest 
+	g++ -g -c -fsanitize=address -std=c++23 -fPIC ParticleClass.h -lgtest 
 
 clean:
 	rm -f *.o a.out core

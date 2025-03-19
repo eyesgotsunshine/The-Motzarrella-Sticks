@@ -92,9 +92,17 @@ class particleSystem {
 	//Class Methods//
 	/////////////////
 	
-	int addParticle(int placeholder = 0){
-		return placeholder; //TODO: Actually implement this with teamate particle class and linked list class
-	}
+	void addParticle(Cell* newCell) {
+        if (head == nullptr) {  // If list is empty
+            head = newCell;
+            tail = newCell;
+        } else {
+            tail->next = newCell;  // Link the new cell to the end of the list
+            tail = newCell;        // Update the tail to the new cell
+        }
+        particleCount++;  // Increase particle count
+    }
+
 	
 	int numParticles(){
 	 //TODO: Remove this line after testing

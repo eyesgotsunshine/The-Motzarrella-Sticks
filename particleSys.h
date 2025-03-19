@@ -100,8 +100,8 @@ class particleSystem {
             head = newCell;
             tail = newCell;
         } else {
-            tail->next = newCell;  // Link the new cell to the end of the list
-            tail = newCell;        // Update the tail to the new cell
+            tail->setNext(newCell);  // Link the new cell to the end of the list
+            newCell->setPrev(tail);        // Update the tail to the new cell
         }
         particleCount++;  // Increase particle count
     }

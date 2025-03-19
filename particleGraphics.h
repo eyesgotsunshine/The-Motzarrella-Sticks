@@ -21,9 +21,9 @@ class ParticleGraphics{
 		color = newColor;
 	}
 	
-	void drawPoint(int x, int y){
-		//std::cout << "Drawing point at (" << x << ", " << y << ") with color "  << color << std::endl;//Point Stub
-		return;
+	void drawPoint(int row, int cols){
+		std::cout << "Drawing point at (" << row << ", " << cols << ") with color "  << color << std::endl;//Point Stub
+
 	}
 	void drawRectangle(double x, double y){//(int x, int y, int width, int hight){
 		//std::cout << "Drawing retangle at (" << x << ", " << y << ") with width " << width << " and hight " << hight << " with color " << color << std::endl;// Rectangle Stub

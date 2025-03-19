@@ -64,7 +64,8 @@ TEST(CellTest, DefaultConstructor) {
 
 // D - Mark 
 //TEST
-  
+auto [rows,cols] = get_terminal_size();
+ 
   int main (int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

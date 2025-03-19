@@ -1,17 +1,14 @@
-particle_sim: particle_system.o particle.o cell.o main.o
-	g++ -g -pthread -fsanitize=address -std=c++23 particle_system.o particle.o cell.o main.o -o particle_sim -lgtest
+a.out: cell.o particleSys.o main.o
+	g++ -g -pthread -fsanitize=address -std=c++23 cell.o particleSys.o main.o -lgtest 
 
-main.o: main.cc particle_system.h particle.h cell.h
+main.o: main.cc cell.h particleSys.h
 	g++ -g -c -fsanitize=address -std=c++23 -fPIC main.cc -lgtest 
-
-particle_system.o: particle_system.cc particle_system.h particle.h cell.h
-	g++ -g -c -fsanitize=address -std=c++23 -fPIC particle_system.cc -lgtest 
-
-particle.o: particle.cc particle.h
-	g++ -g -c -fsanitize=address -std=c++23 -fPIC particle.cc -lgtest 
 
 cell.o: cell.cc cell.h
 	g++ -g -c -fsanitize=address -std=c++23 -fPIC cell.cc -lgtest 
 
+particleSys.o: particleSys.cc particleSys.h
+	g++ -g -c -fsanitize=address -std=c++23 -fPIC particleSys.cc -lgtest 
+
 clean:
-	rm -f *.o particle_sim core
+	rm -f *.o a.out core

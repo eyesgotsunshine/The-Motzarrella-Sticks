@@ -1,4 +1,4 @@
-a.out: particleSys.o main.o
+a.out: particleSys.o particleGraphics.o  ParticleClass.o cell.o main.o
 	g++ -g -pthread -fsanitize=address -std=c++23 particleSys.o particleGraphics.o ParticleClass.o cell.o main.o -lgtest 
 
 main.o: main.cc cell.h particleSys.h particleGraphics.h ParticleClass.h

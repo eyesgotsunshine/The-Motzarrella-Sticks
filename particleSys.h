@@ -128,7 +128,7 @@ class particleSystem {
         	Cell *current = head;  // Start at the head 
         	while (current != nullptr) {
             	Cell *temp = current;     // Store current node
-            	current = current->next;  // Move to next node
+		current = current->getNext();
             	delete temp;              // Delete current node
        	 }
     }

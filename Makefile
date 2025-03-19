@@ -1,27 +1,17 @@
-# Compiler and flags
-CXX := g++
-CXXFLAGS := -Wall -Wextra -std=c++17 -fsanitize=address -g
+particle_sim: particle_system.o particle.o cell.o main.o
+	g++ -g -pthread -fsanitize=address -std=c++23 particle_system.o particle.o cell.o main.o -o particle_sim -lgtest
 
-# Find all .cc and .h files automatically
-SRC := $(wildcard *.cc)
-OBJ := $(SRC:.cc=.o)
-EXEC := a.out  # Change this to your desired executable name
+main.o: main.cc particle_system.h particle.h cell.h
+	g++ -g -c -fsanitize=address -std=c++23 -fPIC main.cc -lgtest 
 
-# Default target
-all: $(EXEC)
+particle_system.o: particle_system.cc particle_system.h particle.h cell.h
+	g++ -g -c -fsanitize=address -std=c++23 -fPIC particle_system.cc -lgtest 
 
-# Link all object files to create the executable
-$(EXEC): $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $@ $^ -lgtest
+particle.o: particle.cc particle.h
+	g++ -g -c -fsanitize=address -std=c++23 -fPIC particle.cc -lgtest 
 
-# Compile each .cc file into a .o file
-%.o: %.cc %.h
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+cell.o: cell.cc cell.h
+	g++ -g -c -fsanitize=address -std=c++23 -fPIC cell.cc -lgtest 
 
-# Clean up object files and the executable
 clean:
-	rm -f $(OBJ) $(EXEC)
-
-# Phony targets (not actual files)
-.PHONY: all clean
-
+	rm -f *.o particle_sim core

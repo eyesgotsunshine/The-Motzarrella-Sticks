@@ -10,7 +10,7 @@ particleSys.o: particleSys.h
 cell.o: cell.h
 	g++ -g -c -fsanitize=address -std=c++23 -fPIC cell.h -lgtest 
 
-particleGraphics.o: particleGraphis.h
+particleGraphics.o: particleGraphis.h ParticleClass.h particleSys.o
 	g++ -g -c -fsanitize=address -std=c++23 -fPIC particleGraphics.h -lgtest 
 
 ParticleClass.o: ParticleClass.h

@@ -22,16 +22,22 @@ class Particle {
 				case STREAMER:
 					x += vx;
 					y += vy;
+					break;
 
 				case BALLISTIC:
 					vy += 1;
 					x += vx;
 					y += vy;
+					break;
 
 				case FIREWORK:
 					if (lifetime <= 0) {
 						cout << "Firework exploded" << endl;
-					}
+					}  else {  // Firework moves normally, and lifetime decreases
+				            x += vx;
+				            y += vy;
+				        }
+				        break;
 
 			}
 			if (lifetime >0) lifetime--;
@@ -43,12 +49,12 @@ class Particle {
 };
 
 int main() {
-	Particle p1(0.0f, 0.0f, 1.0f, 0.5f, 100, STREAMER);
+	vector<Particle> particles;
 
-	Particle p2(0.0f, 0.0f, 1.0f, 1.0f, 100, BALLISTIC);
-
-	p.physics();
-	p.draw();
+	for (auto& particle : particles) {
+		particle.physics();
+		particle.draw();
+	}
 
 	return 0;
 }

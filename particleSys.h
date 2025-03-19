@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "ParticleClass.h" //IWYU: pragma keep
+#include "particleGraphics.h" //IWYU: pragma keep
 #include "cell.h" 
 using namespace std;
 
@@ -121,15 +122,28 @@ class particleSystem {
 	}
 
 	string moveParticles(){
-		return "stub"; //TODO: Unstub this function when ready
+		Cell *curCell = head;
+		while (curCell != nullptr){
+		//TODO: Review below code to very if move() exits somewhere
+		//	current->move(); 
+			current = current ->getNext();
+		}
 	}
 
-	string drawParticles(){
-		return "stub";	// TODO: Unstub this function when ready
+	string drawParticles(ParticleGraphics &graphics){
+		Cell *curCell = head;
+		while (curCell != nullptr){
+			int tempRow = current->get_rows();
+			int tempCol = current->get_columns();
+			//TODO: Review and Verify code with Justus	
+			if (tempRow >= 0 && tempRow < rows && tempCol >= 0 && tempCol < columns){
+				graphics.drawPoint(tempRow, tempCol);
+			}
+			current = current->getNext();
+		}
 	}
 
-	//Apparently some other method goes here that we need
-	//Waiting for further explanation
+	//Space for any other methods required for setting the scene in our animation.
 
 };
 

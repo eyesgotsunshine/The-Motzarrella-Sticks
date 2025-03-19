@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "ParticleClass.h" //IWYU: pragma keep
-#include "particleGraphics.h" //IWYU: pragma keep
+// #include "particleGraphics.h" //IWYU: pragma keep
 #include "cell.h" 
 using namespace std;
 

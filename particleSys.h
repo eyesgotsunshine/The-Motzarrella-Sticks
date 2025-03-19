@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 //#include "particle.h" TODO: Uncomment when finished
-//#include "cell.h" TODO: Uncomment when finished
+#include "cell.h" 
 using namespace std;
 
 ///////////////////////

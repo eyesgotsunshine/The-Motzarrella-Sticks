@@ -69,4 +69,12 @@ auto [rows,cols] = get_terminal_size();
   int main (int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
+
+    vector<Particle> particles;
+
+    for (auto& particle : particles) {
+      particle.physics();
+      particle.draw();
+    }
+
   }

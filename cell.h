@@ -7,12 +7,12 @@ using namespace std;
 class Cell { // holds particles
 	private:
 	ParticleGraphics data; // want the type to be Particle
- 	Cell *prev = nullptr;
-    	Cell *next = nullptr;
+ 	Cell *head = nullptr;
+    Cell *tail = nullptr;
 
 	public:
 	Cell(ParticleGraphics newData, Cell *prev_new = nullptr, Cell *next_new = nullptr) : 
-        data(newData), prev(prev_new), next(next_new) {}
+        data(newData), head(prev_new), tail(next_new) {}
 
 ~Cell() {
 	
@@ -27,19 +27,19 @@ void setData(ParticleGraphics newData) {
 }
 
 Cell *getNext() const { 
-	return next; 
+	return tail; 
 }
 
 void setNext(Cell *next_new) { 
-	next = next_new; 
+	tail = next_new; 
 }
 
 Cell *getPrev() const { 
-	return prev; 
+	return head; 
 }
 
 void setPrev(Cell *prev_new) { 
-	prev = prev_new; 
+	head = prev_new; 
 }
 };
 

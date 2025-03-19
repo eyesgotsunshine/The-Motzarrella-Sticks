@@ -57,7 +57,7 @@ class particleSystem {
 
 	// Destructor - clean up memory (delete linked list nodes)
 	~particleSystem() {
-		Cell *current = head;  // Start at the head 
+		Cell *current = head;  // Starting pt
 		while (current != nullptr) {
 			Cell *temp = current;     // Store current node
 	current = current->getNext();
@@ -110,7 +110,7 @@ class particleSystem {
             tail = newCell;
         } else {
             tail->setNext(newCell);  // Link the new cell to the end of the list
-            newCell->setPrev(tail);        // Update the tail to the new cell
+            newCell->setPrev(tail);    // Updating the tail to the new cell
         }
         particleCount++;  // Increase particle count
     }

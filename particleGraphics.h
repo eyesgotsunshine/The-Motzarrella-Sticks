@@ -2,14 +2,13 @@
 #include <iostream>
 #include <vector>
 #include <string> 
-//#include "cell.h"
-//#include "ParticleClass.h"
-//#include "particleSys.h"
+#include "cell.h"
+#include "ParticleClass.h"
+#include "particleSys.h"
 #include "/public/colors.h"
 #include <cstdlib>
 #include <ctime>
 
-//srand(time(0));//seed the random number generator
 class ParticleGraphics{
 	std::string color;// private value
 
@@ -18,62 +17,6 @@ class ParticleGraphics{
 	std::string getColor() const{// color getter
 		return color;
 	}
-/*
-	//colors version 1 -just echos color to cout
-	const auto [rows,cols] = get_terminal_size();
-	cout << "ROWS " << rows << endl;
-	coutn << "COLS " << cols << endl;
-	cout << RED << "YO!" << RESET << endl;
-	setbgcolor(0,0,0);
-	setcolor(255,255,255);
-	rows --;
-	cols --;
-	int x = rand() % cols;
-	int y = rand() % rows;
-	int dx = 1;//velocity
-	int dy = 1;//"       "
-	string DVD_logo = "🍕"
-	double FPS = 24.;
-	show_cursor(false);
-	int life time = 100;
-	for (int i = 0; i < life time; i++){
-		//phase 1 update pos
-		x += dx;
-		y += dy;
-		//phase 1.5 bounce if we hit edge
-		if (x < 0){
-		x *= -1;
-		dx *= -1; //bounce
-		}
-		if (y < 0){
-		y *= -1;
-		dy *= -1; //bounce
-		}
-		if (y < 0){
-		y *= -1;
-		dy *= -1; //bounce
-		//phase 2 upadte velocisty
-		dx += 0;
-		dy += 1;// add gravity
-		//phase 3 draw partical
-	 movecursor(x,y);
-	 setbgcolor();
-	 setcolor();
-	 cout << DVD_logo;
-	 cout.flush();
-	 resetcolor();
-		//phase 4 delete partical maybe?
-		usleep(100'000); // pause for .1s
-		clearscreen();
-
-		}
-	//cout << "🍕";//fn, control+cmd+space
-	//C++ 17 Structured Binding
-	resetcolor();//partical
-
-
-
-*/
 	void setColor(const std::string& newColor){
 		color = newColor;
 	}
@@ -82,23 +25,6 @@ class ParticleGraphics{
 		//std::cout << "Drawing point at (" << x << ", " << y << ") with color "  << color << std::endl;//Point Stub
 		return;
 	}
-/*	void draw_square(int min_x, int max_x, int min_y, int max_y){
-	assert(min_x < max_x)//enforces precondions on pain of death
-	assert(min_y < min_y)
-	resetcolor();
-	setbgcolor(r,g,b);
-	for (int row = min_x; row <= max_x; row++){
-		for(int col = min_y; col <=max_y; col++){
-	movercursor(row,col);
-	cout << " ";
-
-
-	
-		}
-	}
-}
-
-*/   
 	void drawRectangle(double x, double y){//(int x, int y, int width, int hight){
 		//std::cout << "Drawing retangle at (" << x << ", " << y << ") with width " << width << " and hight " << hight << " with color " << color << std::endl;// Rectangle Stub
 		return;

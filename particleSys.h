@@ -92,7 +92,7 @@ class particleSystem {
 	//Class Methods//
 	/////////////////
 	
-	void addParticle(Cell* newCell) {
+	void addParticle(Cell *newCell) {
         if (head == nullptr) {  // If list is empty
             head = newCell;
             tail = newCell;
@@ -119,6 +119,16 @@ class particleSystem {
 
 	//Apparently some other method goes here that we need
 	//Waiting for further explanation
+
+	// Destructor - clean up memory (delete linked list nodes)
+    	~particleSystem() {
+        	Cell *current = head;  // Start at the head 
+        	while (current != nullptr) {
+            	Cell *temp = current;     // Store current node
+            	current = current->next;  // Move to next node
+            	delete temp;              // Delete current node
+       	 }
+    }
 
 };
 

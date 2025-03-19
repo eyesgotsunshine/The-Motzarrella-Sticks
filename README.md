@@ -8,6 +8,7 @@
 - In charge of *Part C, ParticleSystems class*
 ### - Terry Matamet Salas
 - In charge of part B)  A Particle class that has a position, a velocity, a lifetime (how many frames it lasts until it dies), a movement type (STREAMER - particle moves in a straight line, BALLISTIC - particle is affected by gravity, its velocity in the y direction changes by 1 each frame, and FIREWORK - explodes in streamers when it reaches the end of its lifetime). It needs a physics method (stub it out), and a draw method (stub it out).
+### - Merge Conflict Test
 
 
 

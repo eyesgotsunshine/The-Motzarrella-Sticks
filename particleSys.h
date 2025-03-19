@@ -36,7 +36,8 @@ class particleSystem {
 	
 	int columns = 0;
 	int rows = 0;
-	//TODO: Insert linked list holder here
+	Cell *head = nullptr;  // Head pointer for linked list
+    	Cell *tail = nullptr;  // Tail pointer for linked list
 	int particleCount = 0;
 
 	public:

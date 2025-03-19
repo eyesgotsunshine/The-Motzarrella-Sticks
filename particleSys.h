@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-//#include "particle.h" TODO: Uncomment when finished
+#include "ParticleClass.h" //IWYU: pragma keep
 #include "cell.h" 
 using namespace std;
 

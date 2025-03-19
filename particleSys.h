@@ -49,7 +49,9 @@ class particleSystem {
 	particleSystem(int newCol = 0, int newRow = 0){ //TODO: LL contructor stuff goes here
 		columns = newCol;
 		rows = newRow;
-		//TODO: LL constructor stuff also goes here
+		head = nullptr;
+        	tail = nullptr;
+        	particleCount = 0;
 	}
 
 

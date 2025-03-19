@@ -121,16 +121,16 @@ class particleSystem {
 		return get_particleCount();
 	}
 
-	string moveParticles(){
+	void moveParticles(){
 		Cell *curCell = head;
 		while (curCell != nullptr){
 		//TODO: Review below code to very if move() exits somewhere
-		//	current->move(); 
+			current.physics(); 
 			current = current ->getNext();
 		}
 	}
 
-	string drawParticles(ParticleGraphics &graphics){
+	void drawParticles(ParticleGraphics &graphics){
 		Cell *curCell = head;
 		while (curCell != nullptr){
 			int tempRow = current->get_rows();

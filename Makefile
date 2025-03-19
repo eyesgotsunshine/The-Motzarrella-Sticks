@@ -5,7 +5,7 @@ main.o: main.cc cell.h particleSys.h particleGraphics.h ParticleClass.h
 	g++ -g -c -fsanitize=address -std=c++23 -fPIC main.cc -lgtest 
 
 particleSys.o: particleSys.h
-	g++ -g -c -lgtest-fsanitize=address -std=c++23 -fPIC particleSys.h  -o 
+	g++ -g -c -lgtest-fsanitize=address -std=c++23 -fPIC particleSys.h  -o particleSys.o
 
 cell.o: cell.h particleSys.h particleGraphics.h
 	g++ -g -c -lgtest -fsanitize=address -std=c++23 -fPIC cell.h particleSys.h particleGraphics.h -o cell.o

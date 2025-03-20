@@ -4,8 +4,8 @@ a.out: particleSys.o particleGraphics.o ParticleClass.o cell.o main.o
 main.o: main.cc cell.h particleSys.h particleGraphics.h ParticleClass.h
 	g++ -g -c -fsanitize=address -std=c++23 -fPIC main.cc -lgtest 
 
-particleSys.o: particleSys.h particleGraphis.o cell.o ParticleClass.o
-	g++ -g -c -lgtest-fsanitize=address -std=c++23 -fPIC particleSys.h particleGraphics.o cell.o ParticleClass.o -o particleSys.o
+particleSys.o: particleSys.h cell.o ParticleClass.o
+	g++ -g -c -lgtest-fsanitize=address -std=c++23 -fPIC particleSys.h cell.o ParticleClass.o -o particleSys.o
 
 particleGraphics.o: particleGraphis.h cell.o ParticleClass.o
 	g++ -g -c -fsanitize=address -std=c++23 -fPIC -lgtest particleGraphics.h cell.o ParticleClass.o -o particleGraphics.o

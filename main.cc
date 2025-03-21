@@ -13,22 +13,22 @@
 using namespace std;
 
 void die() {
-  cout << "BAD INPUT\n";
+	cout << "BAD INPUT\n";
 //	exit(EXIT_FAILURE);
-}	
+}
 
 void Menu() {
-    system("echo '\n=== Particle System Menu ===' | lolcat");
-    cout << "1. Run Tests\n";
-    cout << "2. Add a Particle\n";
-    cout << "3. Draw Particles\n";
-    cout << "4. Run Physics\n";
-    cout << "5. Call ParticleSystem 1 (Coming Soon)\n";
-    cout << "6. Call ParticleSystem 2 (Coming Soon)\n";
-    cout << "7. Call ParticleSystem 3 (Coming Soon)\n";
-    cout << "8. Call ParticleSystem 4 (Coming Soon)\n";
-    cout << "9. Exit\n";
-    cout << "Please Choose an option: ";
+	system("echo '\n=== Particle System Menu ===' | lolcat");
+	cout << "1. Run Tests\n";
+	cout << "2. Add a Particle\n";
+	cout << "3. Draw Particles\n";
+	cout << "4. Run Physics\n";
+	cout << "5. Call ParticleSystem 1 (Coming Soon)\n";
+	cout << "6. Call ParticleSystem 2 (Coming Soon)\n";
+	cout << "7. Call ParticleSystem 3 (Coming Soon)\n";
+	cout << "8. Call ParticleSystem 4 (Coming Soon)\n";
+	cout << "9. Exit\n";
+	cout << "Please Choose an option: ";
 }
 
 /* A - Stefanie
@@ -41,10 +41,10 @@ TEST(CellTest, DefaultConstructor) {
   EXPECT_EQ(cell.getPrev(), nullptr);
 } */
 
-  
+
 // B - Terry
 //TEST
-  
+
 // C - Evan
 //TEST
 
@@ -77,29 +77,26 @@ TEST(CellTest, DefaultConstructor) {
 } */
 
 
-// D - Mark 
+// D - Mark
 //TEST
-auto [rows,cols] = get_terminal_size();
- 
-  int main (int argc, char **argv){
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+auto [rows, cols] = get_terminal_size();
 
-    // I am realizing I may have added this function to the wrong file. Will update tomorrow
-    vector<Particle> particles;
+int main(int argc, char **argv) {
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
 
-    for (auto &particle : particles) {
-      particle.physics();
-      particle.draw();
-    }
+	// I am realizing I may have added this function to the wrong file. Will update tomorrow
+	vector<Particle> particles;
 
-    particleSystem system;  // Empty particle system
-    int choice = 0;
+	for (auto &particle : particles) {
+		particle.physics();
+		particle.draw();
+	}
 
-    while (true) {
-        Menu();
-        cin >> choice;
+	particleSystem system;  // Empty particle system
+	int choice = 0;
 
+<<<<<<< HEAD
         if (choice == 1) {
             cout << "Running tests. Calling for GTest externally... still figuring this out.\n";
         } 
@@ -112,32 +109,65 @@ auto [rows,cols] = get_terminal_size();
             cin >> vx >> vy;
             cout << "Enter lifetime: ";
             cin >> lifetime;
+||||||| parent of cdebfc4 (beep beep)
+        if (choice == 1) {
+            cout << "Running tests. Calling for GTest externally... still figuring this out.\n";
+        }
+        else if (choice == 2) {
+            float x, y, vx, vy;
+            int lifetime;
+            cout << "Enter x, y position: ";
+            cin >> x >> y;
+            cout << "Enter vx, vy velocity: ";
+            cin >> vx >> vy;
+            cout << "Enter lifetime: ";
+            cin >> lifetime;
+=======
+	while (true) {
+		Menu();
+		cin >> choice;
+>>>>>>> cdebfc4 (beep beep)
 
-            Particle newParticle(x, y, vx, vy, lifetime, STREAMER);
-            system.addParticle(new Cell(newParticle));  // Add particle to system
-            cout << "Particle added.\n";
-        }
-        else if (choice == 3) {
-            system.drawParticles();
-        }
-        else if (choice == 4) {
-            system.moveParticles();
-            cout << "Physics updated.\n";
-        }
-        else if (choice >= 5 && choice <= 8) {
-            cout << "This is under construction. Beep, beep.\n";
-        }
-        else if (choice == 9) {
-            cout << "Exiting program.\n";
-          
-            break;
-        }
-        else {
-            cout << "Invalid choice. Try again.\n";
-          system("echo '\n G O O D  B Y E' | lolcat");
-        }
-    }
+		if (choice == 1) {
+			cout << "Running tests. Calling for GTest externally... still figuring this out.\n";
+		} else if (choice == 2) {
+			float x, y, vx, vy;
+			int lifetime;
+			cout << "Enter x, y position: ";
+			cin >> x >> y;
+			cout << "Enter vx, vy velocity: ";
+			cin >> vx >> vy;
+			cout << "Enter lifetime: ";
+			cin >> lifetime;
 
+<<<<<<< HEAD
     //return 0;
+||||||| parent of cdebfc4 (beep beep)
+    //return 0;
+}
+=======
+			Particle newParticle(x, y, vx, vy, lifetime, STREAMER);
+			system.addParticle(new Cell(newParticle));  // Add particle to system
+			cout << "Particle added.\n";
+		} else if (choice == 3) {
+			system.drawParticles();
+		} else if (choice == 4) {
+			system.moveParticles();
+			cout << "Physics updated.\n";
+		} else if (choice >= 5 && choice <= 8) {
+			cout << "This is under construction. Beep, beep.\n";
+		} else if (choice == 9) {
+			cout << "Exiting program.\n";
 
-  }
+			break;
+		} else {
+			cout << "Invalid choice. Try again.\n";
+			system("echo '\n G O O D  B Y E' | lolcat");
+		}
+	}
+
+	//return 0;
+}
+>>>>>>> cdebfc4 (beep beep)
+
+}

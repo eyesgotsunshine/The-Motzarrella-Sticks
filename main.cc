@@ -85,11 +85,60 @@ auto [rows,cols] = get_terminal_size();
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 
+    // I am realizing I may have added this function to the wrong file. Will update tomorrow
     vector<Particle> particles;
 
-    for (auto& particle : particles) {
+    for (auto &particle : particles) {
       particle.physics();
       particle.draw();
     }
+
+    particleSystem system;  // Empty particle system
+    int choice = 0;
+
+    while (true) {
+        Menu();
+        cin >> choice;
+
+        if (choice == 1) {
+            cout << "Running tests. Calling for GTest externally... still figuring this out.\n";
+        }
+        else if (choice == 2) {
+            float x, y, vx, vy;
+            int lifetime;
+            cout << "Enter x, y position: ";
+            cin >> x >> y;
+            cout << "Enter vx, vy velocity: ";
+            cin >> vx >> vy;
+            cout << "Enter lifetime: ";
+            cin >> lifetime;
+
+            Particle newParticle(x, y, vx, vy, lifetime, STREAMER);
+            system.addParticle(new Cell(newParticle));  // Add particle to system
+            cout << "Particle added.\n";
+        }
+        else if (choice == 3) {
+            system.drawParticles();
+        }
+        else if (choice == 4) {
+            system.moveParticles();
+            cout << "Physics updated.\n";
+        }
+        else if (choice >= 5 && choice <= 8) {
+            cout << "This is under construction. Beep, beep.\n";
+        }
+        else if (choice == 9) {
+            cout << "Exiting program.\n";
+          
+            break;
+        }
+        else {
+            cout << "Invalid choice. Try again.\n";
+          system("echo '\n G O O D  B Y E' | lolcat");
+        }
+    }
+
+    //return 0;
+}
 
   }

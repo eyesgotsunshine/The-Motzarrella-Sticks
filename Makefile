@@ -1,20 +1,20 @@
 a.out: particleSys.o particleGraphics.o ParticleClass.o cell.o main.o
-	g++ -g -pthread -fsanitize=address -std=c++23 particleSys.o particleGraphics.o ParticleClass.o cell.o main.o -lgtest 
+	g++ -g -pthread -lgtest -fsanitize=address -std=c++23 particleSys.o particleGraphics.o ParticleClass.o cell.o main.o
 
-main.o: main.cc cell.h particleSys.h particleGraphics.h ParticleClass.h
-	g++ -g -c -fsanitize=address -std=c++23 -fPIC main.cc -lgtest 
+main.o: main.cc particleSys.h
+	g++ -g -c -fsanitize=address -std=c++23 -fPIC main.cc -lgtest particleSys.h
 
-particleSys.o: particleSys.h cell.o ParticleClass.o
-	g++ -g -c -lgtest-fsanitize=address -std=c++23 -fPIC particleSys.h cell.o ParticleClass.o -o particleSys.o
+particleSys.o: particleSys.h cell.h 
+	g++ -g -c -lgtest -fsanitize=address -std=c++23 -fPIC particleSys.h
 
-particleGraphics.o: particleGraphis.h cell.o ParticleClass.o
-	g++ -g -c -fsanitize=address -std=c++23 -fPIC -lgtest particleGraphics.h cell.o ParticleClass.o -o particleGraphics.o
+particleGraphics.o: particleGraphis.h cell.h ParticleClass.h
+	g++ -g -c -fsanitize=address -std=c++23 -fPIC -lgtest particleGraphics.h
 
-cell.o: cell.h ParticleClass.o
-	g++ -g -c -lgtest -fsanitize=address -std=c++23 -fPIC cell.h ParticleClass.o -o cell.o
+cell.o: cell.h ParticleClass.h
+	g++ -g -c -lgtest -fsanitize=address -std=c++23 -fPIC cell.h
 
 ParticleClass.o: ParticleClass.h
-	g++ -g -c  -lgtest -fsanitize=address -std=c++23 -fPIC ParticleClass.h -o ParticleClass.o
+	g++ -g -c  -lgtest -fsanitize=address -std=c++23 -fPIC ParticleClass.h
 
 clean:
 	rm -f *.o a.out core

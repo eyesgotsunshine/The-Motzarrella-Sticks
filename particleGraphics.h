@@ -25,10 +25,20 @@ class ParticleGraphics{
 		std::cout << "Drawing point at (" << row << ", " << cols << ") with color "  << color << std::endl;//Point Stub
 
 	}
-	void drawRectangle(double x, double y){//(int x, int y, int width, int hight){
-		//std::cout << "Drawing retangle at (" << x << ", " << y << ") with width " << width << " and hight " << hight << " with color " << color << std::endl;// Rectangle Stub
-		return;
-	}
+	void drawRectangle(int min_x, int max_x, int min_y, int max_y, int r, int g, int b) {
+    assert(min_x < max_x); 
+    assert(min_y < max_y);
+    resetcolor();
+    setbgcolor(r,g,b);
+    for (int row = min_x; row <= max_x; row++) {
+        for (int col = min_y; col <= max_y; col++) {
+            movecursor(row,col);
+            cout << " ";
+        }
+    }
+    cout.flush();
+    resetcolor();
+}
 	
 	void drawOval(double x, double y){//(int x, int y, int width, int hight){
 		//std::cout << "Drawing oval at (" << x << ", " << y << ") with width " << width << " and hight " << " with color " << color << std::endl;// Oval Stub

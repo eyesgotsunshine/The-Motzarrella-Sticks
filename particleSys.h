@@ -81,7 +81,7 @@ class particleSystem {
 	const int& get_particleCount() const{
         return particleCount;
     }
-
+	
 	///////////
 	//Setters//
 	///////////
@@ -125,21 +125,21 @@ class particleSystem {
 		Cell *curCell = head;
 		while (curCell != nullptr){
 		//TODO: Review below code to very if move() exits somewhere
-			current.physics(); 
-			current = current ->getNext();
+			//curCell.physics();  this is not compiling atm, will check later
+			curCell = curCell ->getNext();
 		}
 	}
 
 	void drawParticles(ParticleGraphics &graphics){
 		Cell *curCell = head;
 		while (curCell != nullptr){
-			int tempRow = current->get_rows();
-			int tempCol = current->get_columns();
+			int tempRow = curCell->get_rows();
+			int tempCol = curCell->get_columns();
 			//TODO: Review and Verify code with Justus	
 			if (tempRow >= 0 && tempRow < rows && tempCol >= 0 && tempCol < columns){
 				graphics.drawPoint(tempRow, tempCol);
 			}
-			current = current->getNext();
+			curCell = curCell->getNext();
 		}
 	}
 

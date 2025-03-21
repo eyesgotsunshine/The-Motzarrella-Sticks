@@ -5,10 +5,10 @@
 #include <cctype>
 #include <cmath> //IWYU: prgama keep
 #include <stack>
-#include "cell.h"
+//#include "cell.h"
 #include <string>
 #include "particleSys.h"
-#include "particleGraphics.h"
+//#include "particleGraphics.h"
 
 using namespace std;
 
@@ -17,15 +17,30 @@ void die() {
 //	exit(EXIT_FAILURE);
 }	
 
-// A - Stefanie
-// Test default constructor
+void Menu() {
+    system("echo '\n=== Particle System Menu ===' | lolcat");
+    cout << "1. Run Tests\n";
+    cout << "2. Add a Particle\n";
+    cout << "3. Draw Particles\n";
+    cout << "4. Run Physics\n";
+    cout << "5. Call ParticleSystem 1 (Coming Soon)\n";
+    cout << "6. Call ParticleSystem 2 (Coming Soon)\n";
+    cout << "7. Call ParticleSystem 3 (Coming Soon)\n";
+    cout << "8. Call ParticleSystem 4 (Coming Soon)\n";
+    cout << "9. Exit\n";
+    cout << "Please Choose an option: ";
+}
+
+/* A - Stefanie
+Test default constructor
 TEST(CellTest, DefaultConstructor) {
   ParticleGraphics p;
   Cell cell(p);
   //EXPECT_EQ(cell.getData(), 2);
   EXPECT_EQ(cell.getNext(), nullptr);
   EXPECT_EQ(cell.getPrev(), nullptr);
-} 
+} */
+
   
 // B - Terry
 //TEST
@@ -70,11 +85,59 @@ auto [rows,cols] = get_terminal_size();
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 
+    // I am realizing I may have added this function to the wrong file. Will update tomorrow
     vector<Particle> particles;
 
-    for (auto& particle : particles) {
+    for (auto &particle : particles) {
       particle.physics();
       particle.draw();
     }
+
+    particleSystem system;  // Empty particle system
+    int choice = 0;
+
+    while (true) {
+        Menu();
+        cin >> choice;
+
+        if (choice == 1) {
+            cout << "Running tests. Calling for GTest externally... still figuring this out.\n";
+        } 
+        else if (choice == 2) {
+            float x, y, vx, vy;
+            int lifetime;
+            cout << "Enter x, y position: ";
+            cin >> x >> y;
+            cout << "Enter vx, vy velocity: ";
+            cin >> vx >> vy;
+            cout << "Enter lifetime: ";
+            cin >> lifetime;
+
+            Particle newParticle(x, y, vx, vy, lifetime, STREAMER);
+            system.addParticle(new Cell(newParticle));  // Add particle to system
+            cout << "Particle added.\n";
+        }
+        else if (choice == 3) {
+            system.drawParticles();
+        }
+        else if (choice == 4) {
+            system.moveParticles();
+            cout << "Physics updated.\n";
+        }
+        else if (choice >= 5 && choice <= 8) {
+            cout << "This is under construction. Beep, beep.\n";
+        }
+        else if (choice == 9) {
+            cout << "Exiting program.\n";
+          
+            break;
+        }
+        else {
+            cout << "Invalid choice. Try again.\n";
+          system("echo '\n G O O D  B Y E' | lolcat");
+        }
+    }
+
+    //return 0;
 
   }

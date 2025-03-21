@@ -77,7 +77,8 @@ class Particle {
 		int lifetime;
 		MovementType movement;
 
-		Particle(float startX, float startY, float startVx, float startVy, int startLifetime, MovementType type) : x(startX), y(startY), vx(startVy), lifetime(startLifetime), movement(type) {}
+		Particle(float startX, float startY, float startVx, float startVy, int startLifetime, MovementType type) 
+  		: x(startX), y(startY), vx(startVy), lifetime(startLifetime), movement(type) {}
 
 		// add get functions for x, y, vx, vy, lifetime, and movement
 

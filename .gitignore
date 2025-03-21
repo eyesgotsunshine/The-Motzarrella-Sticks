@@ -11,6 +11,10 @@
 *.gch
 *.pch
 
+# Miscellaneous
+*.swp
+*.override
+
 # Compiled Dynamic libraries
 *.so
 *.dylib

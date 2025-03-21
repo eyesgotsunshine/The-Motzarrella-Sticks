@@ -25,7 +25,7 @@ A ParticleSystem class that will handle all the logic for the simulation.
 	
 	- A drawParticles() method that will call the draw method on each particle (stub it out) 								DONE
 
-	- Additional graphics as needed like the rectangles of a window.														HUH? WAITING FOR EXPLANATION AND PLANS
+	- Additional graphics as needed like the rectangles of a window.														DONE
 
 */
 
@@ -35,8 +35,8 @@ A ParticleSystem class that will handle all the logic for the simulation.
 
 class particleSystem {
 	
-	int columns = 0;
-	int rows = 0;
+	int columnsY = 0;
+	int rowsX = 0;
 	Cell *head = nullptr;  // Head pointer for linked list
     Cell *tail = nullptr;  // Tail pointer for linked list
 	int particleCount = 0;
@@ -48,8 +48,8 @@ class particleSystem {
 	///////////////
 
 	particleSystem(int newCol = 0, int newRow = 0){ //TODO: LL contructor stuff goes here
-		columns = newCol;
-		rows = newRow;
+		columnsY = newCol;
+		rowsX = newRow;
 		head = nullptr;
         	tail = nullptr;
         	particleCount = 0;
@@ -69,11 +69,11 @@ class particleSystem {
 	///////////
 
 	const int& get_columns() const{
-		return columns;
+		return columnsY;
 	}
 
 	const int& get_rows() const{
-        return rows;
+        return rowsX;
     }
 
 	//TODO: Getter for linked list
@@ -87,11 +87,11 @@ class particleSystem {
 	///////////
 
  	void set_columns(int new_columns = 0){
-        columns = new_columns;
+        columnsY = new_columns;
     }
 
 	void set_rows(int new_rows = 0){
-        rows = new_rows;
+        rowsX = new_rows;
     }
 
 	//TODO: Setter for linked list
@@ -117,7 +117,6 @@ class particleSystem {
 
 	
 	int numParticles(){
-	 //TODO: Remove this line after testing
 		return get_particleCount();
 	}
 

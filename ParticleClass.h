@@ -130,10 +130,10 @@ class Particle {
 			movement = new_movement;
 		}
 
-	/*Particle position ()
+	Particle position ()
 		for (auto& particle : particles) {
 		cout << "Particle at (" << particle.get_x() << ", " << particle.get_y() << ")" << endl;
-	 } */
+	 } 
 /*
 	 pair<int, int> getPosition() const {
 		return {static_cast<int>(x), static_cast<int>(y)};

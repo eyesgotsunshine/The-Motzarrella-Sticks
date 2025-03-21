@@ -102,7 +102,7 @@ auto [rows,cols] = get_terminal_size();
 
         if (choice == 1) {
             cout << "Running tests. Calling for GTest externally... still figuring this out.\n";
-        }
+        } 
         else if (choice == 2) {
             float x, y, vx, vy;
             int lifetime;
@@ -139,6 +139,5 @@ auto [rows,cols] = get_terminal_size();
     }
 
     //return 0;
-}
 
   }

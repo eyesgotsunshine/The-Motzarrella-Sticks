@@ -17,6 +17,20 @@ void die() {
 //	exit(EXIT_FAILURE);
 }	
 
+void Menu() {
+    system("echo '\n=== Particle System Menu ===' | lolcat");
+    cout << "1. Run Tests\n";
+    cout << "2. Add a Particle\n";
+    cout << "3. Draw Particles\n";
+    cout << "4. Run Physics\n";
+    cout << "5. Call ParticleSystem 1 (Coming Soon)\n";
+    cout << "6. Call ParticleSystem 2 (Coming Soon)\n";
+    cout << "7. Call ParticleSystem 3 (Coming Soon)\n";
+    cout << "8. Call ParticleSystem 4 (Coming Soon)\n";
+    cout << "9. Exit\n";
+    cout << "Please Choose an option: ";
+}
+
 /* A - Stefanie
 Test default constructor
 TEST(CellTest, DefaultConstructor) {

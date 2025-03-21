@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "ParticleClass.h" //IWYU: pragma keep
-// #include "particleGraphics.h" //IWYU: pragma keep
+#include "particleGraphics.h" //IWYU: pragma keep
 #include "cell.h" 
 using namespace std;
 
@@ -142,6 +142,31 @@ class particleSystem {
 			curCell = curCell->getNext();
 		}
 	}
+
+	void cullParticles() {
+    Cell* cur = head;
+    while (cur != nullptr) {
+        Cell* next = cur->getNext();
+        if (cur->getLifetime() <= 0 || cur->getX() < 0 || cur->getX() >= columns ||
+            cur->getY() < 0 || cur->getY() >= rows) {
+            // Remove cur from the list
+            if (cur == head) head = cur->getNext();
+            if (cur == tail) tail = cur->getPrev();
+            if (cur->getPrev()) cur->getPrev()->setNext(cur->getNext());
+            if (cur->getNext()) cur->getNext()->setPrev(cur->getPrev());
+
+            delete cur;
+            particleCount--;
+        }
+        cur = next;
+    }
+}
+	void updateFrame(ParticleGraphics &graphics) {
+    	moveParticles(); // Apply physics
+    	cullParticles(); // Remove dead/out-of-bounds particles
+	    drawParticles(graphics); // Render the remaining particles
+}
+
 
 	//Space for any other methods required for setting the scene in our animation.
 

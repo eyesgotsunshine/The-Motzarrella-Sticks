@@ -125,7 +125,7 @@ class particleSystem {
 		Cell *curCell = head;
 		while (curCell != nullptr){
 		//TODO: Review below code to very if move() exits somewhere
-			curCell.physics(); 
+			//curCell.physics();  this is not compiling atm, will check later
 			curCell = curCell ->getNext();
 		}
 	}

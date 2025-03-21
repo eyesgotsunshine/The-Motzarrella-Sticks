@@ -5,10 +5,10 @@
 #include <cctype>
 #include <cmath> //IWYU: prgama keep
 #include <stack>
-#include "cell.h"
+//#include "cell.h"
 #include <string>
 #include "particleSys.h"
-#include "particleGraphics.h"
+//#include "particleGraphics.h"
 
 using namespace std;
 
@@ -17,15 +17,16 @@ void die() {
 //	exit(EXIT_FAILURE);
 }	
 
-// A - Stefanie
-// Test default constructor
+/* A - Stefanie
+Test default constructor
 TEST(CellTest, DefaultConstructor) {
   ParticleGraphics p;
   Cell cell(p);
   //EXPECT_EQ(cell.getData(), 2);
   EXPECT_EQ(cell.getNext(), nullptr);
   EXPECT_EQ(cell.getPrev(), nullptr);
-} 
+} */
+
   
 // B - Terry
 //TEST

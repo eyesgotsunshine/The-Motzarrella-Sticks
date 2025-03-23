@@ -3,6 +3,8 @@
 #include <vector>
 using namespace std;
 
+class ParticleSystem;
+
 enum MovementType {
     STREAMER,
     BALLISTIC,
@@ -11,15 +13,15 @@ enum MovementType {
 
 class Particle {
 public:
-    float x, y;
+    float x, y; // rows & columns are done here
     float vx, vy;
     int lifetime;
     MovementType movement;
 
     Particle(float startX, float startY, float startVx, float startVy, int startLifetime, MovementType type)
-        : x(startX), y(startY), vx(startVx), vy(startVy), lifetime(startLifetime), movement(type) {}  // Fixed vx initialization
+        : x(startX), y(startY), vx(startVx), vy(startVy), lifetime(startLifetime), movement(type) {}  // Fixed vx initialization 
 
-    void physics(vector<Particle>& particleSystem) {  // Pass particle system to add new particles
+	void physics(ParticleSystem *part_sys ) {  // Pass particle system to add new particles
         switch (movement) {
             case STREAMER:
                 x += vx;
@@ -42,7 +44,8 @@ public:
                         float speed = 2.0f;
                         float newVx = speed * cos(angle);
                         float newVy = speed * sin(angle);
-                        particleSystem.push_back(Particle(x, y, newVx, newVy, 30, STREAMER));  // New particles are streamers
+                       // part_sys-> addParticle(Particle(x, y, newVx, newVy, 30, STREAMER));  // New particles are streamers
+						//ERROR ^ wil need to come back to this
                     }
                 } else {
                     x += vx;
@@ -82,54 +85,31 @@ class Particle {
 
 		// add get functions for x, y, vx, vy, lifetime, and movement
 
-		float get_x() const {
-			return x;
-		}
+		//Kerney said getters and setters are not essential for this file
+		float get_x() const { return x;}
 
-		float get_y() const {
-			return y;
-		}
+		float get_y() const {return y;}
 
-		float get_vx() const {
-			return vx;
-		}
+		float get_vx() const {return vx;}
 
-		float get_vy() const {
-			return vy;
-		}
+		float get_vy() const {return vy;}
 
-		int get_lifetime() const {
-			return lifetime;
-		}
+		int get_lifetime() const {return lifetime;}
 
-		MovementType get_movement() const {
-			return movement;
-		}
+		MovementType get_movement() const {return movement;	}
 // then change the particle system to use these functions to get the current possitions of the particles
 
-		void set_x(float new_x) {
-			x = new_x;
-		}
+		void set_x(float new_x) {x = new_x;}
 
-		void set_y(float new_y) {
-			y = new_y;
-		}
+		void set_y(float new_y) {y = new_y;	}
 
-		void set_vx(float new_vx) {
-			vx = new_vx;
-		}
+		void set_vx(float new_vx) {vx = new_vx;}
 
-		void set_vy(float new_vy) {
-			vy = new_vy;
-		}
+		void set_vy(float new_vy) {vy = new_vy;}
 
-		void set_lifetime(int new_lifetime) {
-			lifetime = new_lifetime;
-		}
+		void set_lifetime(int new_lifetime) {lifetime = new_lifetime;}
 
-		void set_movement(MovementType new_movement) {
-			movement = new_movement;
-		}
+		void set_movement(MovementType new_movement) {movement = new_movement;}
 
 	Particle position ()
 		for (auto& particle : particles) {

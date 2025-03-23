@@ -3,7 +3,7 @@
 #include <vector>
 #include <string> 
 #include "cell.h"
-#include "ParticleClass.h"
+#include "particleClass.h"
 #include "particleSys.h"
 #include "/public/colors.h"
 #include <cstdlib>

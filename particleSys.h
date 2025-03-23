@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "ParticleClass.h" //IWYU: pragma keep
+#include "particleClass.h" //IWYU: pragma keep
 #include "particleGraphics.h" //IWYU: pragma keep
 #include "cell.h" 
 using namespace std;
@@ -33,7 +33,7 @@ A ParticleSystem class that will handle all the logic for the simulation.
 //PARTICLE SYSTEM CLASS//
 /////////////////////////
 
-class particleSystem {
+class ParticleSystem {
 	
 	int columnsY = 0;
 	int rowsX = 0;
@@ -47,16 +47,16 @@ class particleSystem {
 	//Constructor//
 	///////////////
 
-	particleSystem(int newCol = 0, int newRow = 0){ //TODO: LL contructor stuff goes here
+	ParticleSystem(int newCol = 0, int newRow = 0){ //TODO: LL contructor stuff goes here
 		columnsY = newCol;
 		rowsX = newRow;
-		head = nullptr;
+/*		head = nullptr;       Kerney had me comment these out
         	tail = nullptr;
         	particleCount = 0;
-	}
+*/	}
 
 	// Destructor - clean up memory (delete linked list nodes)
-	~particleSystem() {
+	~ParticleSystem() {
 		Cell *current = head;  // Starting pt
 		while (current != nullptr) {
 			Cell *temp = current;     // Store current node
@@ -87,7 +87,7 @@ class particleSystem {
 	///////////
 
  	void set_columns(int new_columns = 0){
-        columnsY = new_columns;
+        columnsY = new_columns; //may have these switched, EVALUATE
     }
 
 	void set_rows(int new_rows = 0){
@@ -95,15 +95,16 @@ class particleSystem {
     }
 
 	//TODO: Setter for linked list
-
-	void set_particleCount(int new_particleCount = 0){
+	// Kerney said to comment this out
+	/*void set_particleCount(int new_particleCount = 0){
         particleCount = new_particleCount;
     }
+	*/
 
 	/////////////////
 	//Class Methods//
 	/////////////////
-	
+
 	void addParticle(Cell *newCell) {
         if (head == nullptr) {  // If list is empty
             head = newCell;
@@ -111,6 +112,7 @@ class particleSystem {
         } else {
             tail->setNext(newCell);  // Link the new cell to the end of the list
             newCell->setPrev(tail);    // Updating the tail to the new cell
+            tail = newCell;
         }
         particleCount++;  // Increase particle count
     }
@@ -120,11 +122,12 @@ class particleSystem {
 		return get_particleCount();
 	}
 
+	// Move particles: for every particle in particles, call physics on it
 	void moveParticles(){
 		Cell *curCell = head;
 		while (curCell != nullptr){
 		//TODO: Review below code to very if move() exits somewhere
-			//curCell.physics();  this is not compiling atm, will check later
+			curCell->getData().physics(this);
 			curCell = curCell ->getNext();
 		}
 	}
@@ -132,10 +135,10 @@ class particleSystem {
 	void drawParticles(ParticleGraphics &graphics){
 		Cell *curCell = head;
 		while (curCell != nullptr){
-			int tempRow = curCell->get_rows();
-			int tempCol = curCell->get_columns();
+			int tempRow = curCell->getData().x;
+			int tempCol = curCell->getData().y;
 			//TODO: Review and Verify code with Justus	
-			if (tempRow >= 0 && tempRow < rows && tempCol >= 0 && tempCol < columns){
+			if (tempRow >= 0 && tempRow < rowsX && tempCol >= 0 && tempCol < columnsY){
 				graphics.drawPoint(tempRow, tempCol);
 			}
 			curCell = curCell->getNext();
@@ -146,8 +149,9 @@ class particleSystem {
     Cell* cur = head;
     while (cur != nullptr) {
         Cell* next = cur->getNext();
-        if (cur->getLifetime() <= 0 || cur->getX() < 0 || cur->getX() >= columns ||
-            cur->getY() < 0 || cur->getY() >= rows) {
+		Particle p = cur->getData(); // to make a shorter/simplier if statement
+        if (p.lifetime <= 0 || p.x < 0 || p.x >= columnsY ||
+            p.y < 0 || p.y >= rowsX) { // x is supposed to be colmns
             // Remove cur from the list
             if (cur == head) head = cur->getNext();
             if (cur == tail) tail = cur->getPrev();

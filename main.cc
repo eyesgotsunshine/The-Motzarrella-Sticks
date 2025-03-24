@@ -84,8 +84,8 @@ auto [rows, cols] = get_terminal_size();
 int main(int argc, char **argv) {
 
 	ParticleSystem my_system;  // Empty particle system
-	ParticleGraphics part_graph;
-	part_graph.drawPoint(5,10);
+	ParticleGraphics part_graph(255,255,255);
+	part_graph.drawPoint(13,20);
 	return 0;
 	int choice = 0;
 

@@ -36,7 +36,6 @@ public:
 
             case FIREWORK:
                 if (lifetime == 0) {
-                    cout << "Firework exploded at (" << x << ", " << y << ")" << endl;
                     
                     // Generate explosion particles
                     for (int i = 0; i < 8; i++) { // 8 particles spreading out

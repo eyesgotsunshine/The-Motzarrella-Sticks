@@ -85,6 +85,8 @@ int main(int argc, char **argv) {
 
 	ParticleSystem my_system;  // Empty particle system
 	ParticleGraphics part_graph;
+	part_graph.drawPoint(5,10);
+	return 0;
 	int choice = 0;
 
 	while (true) {
@@ -113,7 +115,7 @@ int main(int argc, char **argv) {
 			my_system.addParticle(new Cell(newParticle));  // Add particle to system
 			cout << "Particle added.\n";
 		} else if (choice == 3) {
-			my_system.drawParticles(part_graph.drawPoint);
+			my_system.drawParticles(part_graph);
 		} else if (choice == 4) {
 			my_system.moveParticles();
 			cout << "Physics updated.\n";

@@ -113,7 +113,7 @@ int main(int argc, char **argv) {
 			my_system.addParticle(new Cell(newParticle));  // Add particle to system
 			cout << "Particle added.\n";
 		} else if (choice == 3) {
-			my_system.drawParticles(part_graph);
+			my_system.drawParticles(part_graph.drawPoint);
 		} else if (choice == 4) {
 			my_system.moveParticles();
 			cout << "Physics updated.\n";
@@ -121,7 +121,7 @@ int main(int argc, char **argv) {
 			cout << "This is under construction. Beep, beep.\n";
 		} else if (choice == 9) {
 			cout << "Exiting program.\n";
-			system("echo 'G O O D     B Y E' | lolcat");
+			system("echo 'G O O D    B Y E' | lolcat");
 			break;
 		} else {
 			 system("echo 'Invalid choice. Try again.\n' | lolcat");

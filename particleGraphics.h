@@ -14,21 +14,21 @@ class ParticleGraphics{
 	int r, g, b;
 
 	public:
-	particleGraphics(int new_r = 0, int new_g = 0, int new_b = 0)
-	r = new_r;
-	g = new_g;
-	b = new_b;
-	}
+	particleGraphics(int new_r = 0, int new_g = 0, int new_b = 0);
+	int r = new_r;
+	int g = new_g;
+	int b = new_b;
+	};
 
-	int getColor(){
+	int getColorR(){
 	return r;
 	}
 
-	int getColor(){
+	int getColorG(){
 	return g;
 	}
 	
-	int getColor(){
+	int getColorB(){
 	return b;
 	}
 	void setcolor(int new_r = 0, int new_g = 0, int new_b = 0)

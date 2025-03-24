@@ -34,7 +34,7 @@ class ParticleGraphics {
 	}
 	void drawPoint(int x, int y){ // draws particle point
 		resetcolor();
-		setbgcolor(int r, int g, int b);
+		setbgcolor(r, g, b);
 		int col = x;
 		int row = y;
 		cout << " ";

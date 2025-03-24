@@ -11,11 +11,30 @@
 
 class ParticleGraphics{
 	std::string color;// private value
+	int r, g, b;
 
 	public:
-	ParticleGraphics(std::string intialColor = "Black") : color(intialColor){}// Const 
-	std::string getColor() const{// color getter
-		return color;
+	particleGraphics(int new_r = 0, int new_g = 0, int new_b = 0)
+	r = new_r;
+	g = new_g;
+	b = new_b;
+	}
+
+	int getColor(){
+	return r;
+	}
+
+	int getColor(){
+	return g;
+	}
+	
+	int getColor(){
+	return b;
+	}
+	void setcolor(int new_r = 0, int new_g = 0, int new_b = 0)
+	r = new_r;
+	g = new_g;
+	b = new_b;
 	}
 	void setColor(const std::string& newColor){
 		color = newColor;

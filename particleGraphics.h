@@ -21,9 +21,14 @@ class ParticleGraphics{
 		color = newColor;
 	}
 	
-	void drawPoint(int row, int cols){
-		std::cout << "Drawing point at (" << row << ", " << cols << ") with color "  << color << std::endl;//Point Stub
-
+	void drawPoint(int x, int y){ // draws particle point
+		resetcolor();
+		setbgcolor(r, g, b);
+		int col = x;
+		int row = yl
+		cout << " ";
+		cout.flush();
+		resetcolor();
 	}
 	void drawRectangle(int min_x, int max_x, int min_y, int max_y, int r, int g, int b) {
     assert(min_x < max_x); 

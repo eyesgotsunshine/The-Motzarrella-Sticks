@@ -42,9 +42,9 @@ class ParticleGraphics{
 	
 	void drawPoint(int x, int y){ // draws particle point
 		resetcolor();
-		setbgcolor(r, g, b);
+		setbgcolor(int r, int g, int b);
 		int col = x;
-		int row = yl
+		int row = y;
 		cout << " ";
 		cout.flush();
 		resetcolor();
@@ -78,7 +78,7 @@ class ParticleGraphics{
     	//std::cout << "Drawing line from (" << x1 << ", " << y1 << ") to (" << x2 << ", " << y2 << ") with color " << color << std::endl;
     	return;
 	}
-};
+}
 /*
 int main() { //test code I wrote on onlineGBD
     ParticleGraphics particleGraphics; //particleGraphics object(black)

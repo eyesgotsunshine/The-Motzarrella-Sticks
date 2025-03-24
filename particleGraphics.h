@@ -14,11 +14,11 @@ class ParticleGraphics{
 	int r, g, b;
 
 	public:
-	particleGraphics(int new_r = 0, int new_g = 0, int new_b = 0);
+	ParticleGraphics(int new_r = 0, int new_g = 0, int new_b = 0);
 	int r = new_r;
 	int g = new_g;
 	int b = new_b;
-	};
+	}
 
 	int getColorR(){
 	return r;
@@ -39,6 +39,7 @@ class ParticleGraphics{
 	void setColor(const std::string& newColor){
 		color = newColor;
 	}
+};
 	
 	void drawPoint(int x, int y){ // draws particle point
 		resetcolor();

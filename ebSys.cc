@@ -44,9 +44,9 @@ int main(){
     int lifetime = 100000; // Total frames
     double FPS = 60.;  //Frames per Second
 	int numOfBalls = 10;
-	int r = 0;
-	int g = 0;
-	int b = 222;
+	int r = 255;
+	int g = 255;
+	int b = 255;
 	ParticleGraphics color(r, g, b);
 
 	///////////////////

@@ -90,16 +90,17 @@ int main(){
 */
 
 		for (int i = 0; i < numOfBalls; i++){//Spawns numOfBalls on the left side of screen
-			int y = 25;  // rand() % rows;
-			int Vy = 25;
+//			int y = 1000;  // rand() % rows;
+//			int Vy = 1;
 	  // Spawn on the left
-     //       double y = (rows / 2) + amp * sin(freq * x);  // Start along sine wave
-
+     //      double y = (rows / 2) + amp * sin(freq * x);  // Start along sine wave
+			double y = (rows / 2) + amp * sin(freq * x);
+			double Vy = amp * freq * cos(freq * x);
             // Each particle follows the sine wave as it moves right 
- //         	double Vy = sin(getData().physics(this));
+ //      	double Vy = sin(getData().physics(this));
 
 
-			Particle p(x, y, Vx, Vy, lifetime, SIN);
+			Particle p(x, y, Vx, Vy, lifetime, STREAMER);
 			Cell *c = new Cell(p, nullptr, nullptr);
 			part_sys.addParticle(c);
 	}

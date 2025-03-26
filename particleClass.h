@@ -1,12 +1,14 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <cmath>
 using namespace std;
 
 class ParticleSystem;
 
 enum MovementType {
     STREAMER,
+	SIN,
     BALLISTIC,
     FIREWORK
 };
@@ -27,7 +29,10 @@ public:
                 x += vx;
                 y += vy;
                 break;
-
+			case SIN:
+				x += vx;
+				y = abs(sin(x));
+				break;
             case BALLISTIC:
                 vy += 1;  // Gravity effect
                 x += vx;

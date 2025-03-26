@@ -18,16 +18,15 @@ void die() {
 }
 
 void Menu() {
-	system("echo '\n====== Particle System Menu ======\n' | lolcat");
+	system("echo 'P a r t i c l e \n  S y s t e m \n \t \t \t   M e n u' | figlet | lolcat");
 	cout << "1. Run Tests\n";
 	cout << "2. Add a Particle\n";
 	cout << "3. Draw Particles\n";
 	cout << "4. Run Physics\n";
-	cout << "5. Call ParticleSystem 1 (loading...)\n";
-	cout << "6. Call ParticleSystem 2 (loading...)\n";
-	cout << "7. Call ParticleSystem 3 (loading)\n";
-	cout << "8. Call ParticleSystem 4 (RIP Terry)\n";
-	cout << "9. Exit\n";
+	cout << "5. Call ParticleSystem 1 (Stefanie's)\n";
+	cout << "6. Call ParticleSystem 2 (Mark's)\n";
+	cout << "7. Call ParticleSystem 3 (Evan's)\n";
+	cout << "8. Exit\n";
 	cout << "Please Choose an option: ";
 }
 
@@ -143,11 +142,16 @@ int main(int argc, char **argv) {
 			clearscreen();
 			my_system.moveParticles();
 			my_system.drawParticles(part_graph);
-		} else if (choice >= 5 && choice <= 8) {
+		} else if (choice == 5) { // Stefanie's particles
 			cout << "This is under construction. Beep, beep.\n";
-		} else if (choice == 9) {
-			cout << "Exiting program.\n";
-			system("echo 'G O O D    B Y E' | lolcat");
+		}  else if (choice == 6) { // Mark's particles
+            cout << "This is under construction. Beep, beep.\n";
+        } else if (choice == 7) { // Evan's particles
+            cout << "This is under construction. Beep, beep.\n";
+        }else if (choice == 8) {
+			cout << "\n Exiting program.\n \n";
+			system("echo ' G O O D    B Y E ' | figlet | lolcat");
+			cout << "\n" << endl;
 			break;
 		} else {
 			 system("echo 'Invalid choice. Try again.\n' | lolcat");

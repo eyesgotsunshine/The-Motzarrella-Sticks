@@ -148,7 +148,8 @@ int main(int argc, char **argv) {
 			cout << "This is under construction. Beep, beep.\n";
 			sm::main();
 		}  else if (choice == 6) { // Mark's particles
-            cout << "This is under construction. Beep, beep.\n";
+           	gj::main();
+			//cout << "This is under construction. Beep, beep.\n";
         } else if (choice == 7) { // Evan's particles
 			eb::main();
         }else if (choice == 8) {

@@ -9,6 +9,7 @@
 #include <string>
 #include "particleSys.h"
 //#include "particleGraphics.h"
+#include "Das-Motschenbacher.cc"
 
 using namespace std;
 
@@ -144,6 +145,7 @@ int main(int argc, char **argv) {
 			my_system.drawParticles(part_graph);
 		} else if (choice == 5) { // Stefanie's particles
 			cout << "This is under construction. Beep, beep.\n";
+			sm::main();
 		}  else if (choice == 6) { // Mark's particles
             cout << "This is under construction. Beep, beep.\n";
         } else if (choice == 7) { // Evan's particles

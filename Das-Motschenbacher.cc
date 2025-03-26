@@ -43,7 +43,7 @@ namespace sm{
 		rows--;
 		cols--;
 
-		vector<string> grid(rows, string(cols, ' ' )); //making the space for where aurora is
+	//	vector<string> grid(rows, string(cols, ' ' )); //making the space for where aurora is
 
 		srand(time(0));  //Used for choosing a random spawn position
 		
@@ -55,7 +55,7 @@ namespace sm{
 
 		int r = 0;
 		int g = 150;
-		int b = 150;
+		int b = 155;
 		
 		ParticleGraphics color (r, g, b);
 		
@@ -78,7 +78,7 @@ namespace sm{
 		double frequency = 1;
 		double t = 0;
 
-		ParticleSystem part_sys[cols, rows]; // makes a particle sys that is the screen size
+		ParticleSystem part_sys{cols, rows}; // makes a particle sys that is the screen size
 
 		while (lifetime){
 		

@@ -37,6 +37,7 @@ class ParticleGraphics {
 		setbgcolor(r, g, b);
 		int col = x;
 		int row = y;
+		movecursor(row,col);
 		cout << " ";
 		cout.flush();
 		resetcolor();
@@ -49,7 +50,7 @@ class ParticleGraphics {
 		for (int row = min_x; row <= max_x; row++) {
 			for (int col = min_y; col <= max_y; col++) {
 				movecursor(row,col);
-				cout << " ";
+		//		cout << "Moving cursor to " << row << "," << col << endl;
 			}
 		}
 		cout.flush();

@@ -82,17 +82,16 @@ EXPECT_EQ(cell.getPrev(), nullptr);
 auto [rows, cols] = get_terminal_size();
 
 int main(int argc, char **argv) {
-
+	clearscreen();
 	ParticleSystem my_system;  // Empty particle system
-	ParticleGraphics part_graph(255,255,255);
-	part_graph.drawPoint(13,20);
-	return 0;
+	ParticleGraphics part_graph(255, 255, 255); // 255, 255, 255
+//	part_graph.drawPoint(13, 20); 
 	int choice = 0;
 
 	while (true) {
+		movecursor(30,0);
 		Menu();
 		cin >> choice;
-		
 		if (choice == !cin) {
 			system("echo 'Invalid choice. Try again.\n' | lolcat");
 			continue;
@@ -101,24 +100,49 @@ int main(int argc, char **argv) {
 			cout << "Running tests. Calling for GTest externally... still figuring this out.\n";
 			::testing::InitGoogleTest(&argc, argv);
 			return RUN_ALL_TESTS();
-		} else if (choice == 2) {
-			float x, y, vx, vy;
-			int lifetime;
+		} 
+		else if (choice == 2) {
+			float x = 0 , y = 0, vx = 0, vy = 0;
+			int lifetime = 0;
+			int style = 0;
 			cout << "Enter x, y position: ";
 			cin >> x >> y;
 			cout << "Enter vx, vy velocity: ";
 			cin >> vx >> vy;
 			cout << "Enter lifetime: ";
 			cin >> lifetime;
+			cout << "Do you want it to be:" << endl;
+			cout << "1) streamer" << endl;
+			cout << "2) ballistic" << endl;
+			cout << "3) firework" << endl;
+			cin >> style;
 
-			Particle newParticle(x, y, vx, vy, lifetime, STREAMER);
-			my_system.addParticle(new Cell(newParticle));  // Add particle to system
+			if (style == 1){
+				Particle newParticle(x, y, vx, vy, lifetime, STREAMER);
+ my_system.addParticle(new Cell(newParticle));
+	
+			}
+			if (style == 2){
+				Particle newParticle(x, y, vx, vy, lifetime, BALLISTIC);
+			 my_system.addParticle(new Cell(newParticle));
+			}
+				if (style == 3){
+					Particle newParticle(x, y, vx, vy, lifetime, FIREWORK);
+				 my_system.addParticle(new Cell(newParticle));
+				}
+
+	//		Particle newParticle(x, y, vx, vy, lifetime, STREAMER);
+	//		my_system.addParticle(new Cell(newParticle));  // Add particle to system
 			cout << "Particle added.\n";
-		} else if (choice == 3) {
+			clearscreen();
+		} 
+		else if (choice == 3) {
+			clearscreen();
 			my_system.drawParticles(part_graph);
 		} else if (choice == 4) {
+			clearscreen();
 			my_system.moveParticles();
-			cout << "Physics updated.\n";
+			my_system.drawParticles(part_graph);
 		} else if (choice >= 5 && choice <= 8) {
 			cout << "This is under construction. Beep, beep.\n";
 		} else if (choice == 9) {

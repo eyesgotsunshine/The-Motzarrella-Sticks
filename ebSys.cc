@@ -41,12 +41,12 @@ int main(){
 	/////////////////////
 
 	srand(time(0));  //Used for choosing a random spawn position for the balls
-    int lifetime = 100; // Total frames
+    int lifetime = 100000; // Total frames
     double FPS = 60.;  //Frames per Second
 	int numOfBalls = 10;
-	int r = 200;
-	int g = 37;
-	int b = 20;
+	int r = 0;
+	int g = 0;
+	int b = 222;
 	ParticleGraphics color(r, g, b);
 
 	///////////////////
@@ -64,9 +64,11 @@ int main(){
 
 
 	int x = 1;						//Particle Spawns in Column 1
-	int y = rand() % rows;			//Particle Spawns in random row
+	//int y = rand() % rows;			//Particle Spawns in random row
 	int Vx = 1;						//Moves to the right by one space every frame
-	int Vy = sin(x);				//Moves in a sin pattern
+	double amp = 3;
+	double freq = 0.2; 				//Moves in a sin pattern
+	double t = 0;
 
 	ParticleSystem part_sys{cols, rows};     //Creates a particle system that is the size of the screen
 
@@ -74,15 +76,38 @@ int main(){
     cout << "COLS: " << cols << endl;        //cout size of screen, not necessary for function, just FYI
 
 	while (lifetime){
+/*
+	for (int i = 0; i < 10; i++) {
+    int x = rand() % cols;  // Random column within screen width
+    int y = rand() % rows;  // Random row within screen height
 
-		for (int i = 0; i < numOfBalls; i++){ 		//Spawns numOfBalls on the left side of screen
-			Particle p(x, y, Vx, Vy, lifetime, STREAMER);
+    movecursor(y, x);
+    setcolor(255, 255, 255);   // Text color
+    cout << ball;
+    cout.flush();
+    resetcolor();
+}
+*/
+
+		for (int i = 0; i < numOfBalls; i++){//Spawns numOfBalls on the left side of screen
+			int y = 25;  // rand() % rows;
+			int Vy = 25;
+	  // Spawn on the left
+     //       double y = (rows / 2) + amp * sin(freq * x);  // Start along sine wave
+
+            // Each particle follows the sine wave as it moves right 
+ //         	double Vy = sin(getData().physics(this));
+
+
+			Particle p(x, y, Vx, Vy, lifetime, SIN);
 			Cell *c = new Cell(p, nullptr, nullptr);
 			part_sys.addParticle(c);
 	}
 		part_sys.updateFrame(color);
 		usleep(1000000/FPS);
 		clearscreen();
+		lifetime--;
+		t += 1.0;
 }
 	return 0;
 }

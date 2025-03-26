@@ -7,8 +7,8 @@
 using namespace std;
 
 
-int main(){
-	//srand(time(0));
+//int main(){
+	rand(time(0));
 
 	int x = 0;
 	int y = 0;
@@ -17,8 +17,8 @@ int main(){
     rows--;
     col--;
 
-	int Vx = 1; // horz vel
-	int Vy = 1; // vert vel
+	int Vx = 0; // horz vel
+	int Vy = 10; // vert vel
 
 	int life time =1440;
 	double FPS = 60;
@@ -36,7 +36,7 @@ int main(){
 
 
 	movecursor(y, x);
-	secolor(255,255,255); //set to blue,pink
+	secolor(255,182,193); //set to blue,pink
 	cout << bullet;
 	cout.flesh();
 	resetcolor();

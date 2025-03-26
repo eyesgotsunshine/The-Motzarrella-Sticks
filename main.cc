@@ -8,6 +8,7 @@
 //#include "cell.h"
 #include <string>
 #include "particleSys.h"
+#include "ebSys.cc"
 //#include "particleGraphics.h"
 
 using namespace std;
@@ -147,7 +148,7 @@ int main(int argc, char **argv) {
 		}  else if (choice == 6) { // Mark's particles
             cout << "This is under construction. Beep, beep.\n";
         } else if (choice == 7) { // Evan's particles
-            cout << "This is under construction. Beep, beep.\n";
+			eb::main();
         }else if (choice == 8) {
 			cout << "\n Exiting program.\n \n";
 			system("echo ' G O O D    B Y E ' | figlet | lolcat");

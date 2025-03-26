@@ -77,11 +77,13 @@ int main(){
 
 		for (int i = 0; i < numOfBalls; i++){ 		//Spawns numOfBalls on the left side of screen
 			Particle p(x, y, Vx, Vy, lifetime, STREAMER);
-			Cell c(p);
-			addParticle(c);
+			Cell *c = new Cell(p, nullptr, nullptr);
+			part_sys.addParticle(c);
 	}
 		part_sys.updateFrame(color);
 		usleep(1000000/FPS);
 		clearscreen();
+}
+	return 0;
 }
 }

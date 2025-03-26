@@ -47,10 +47,9 @@ class ParticleSystem {
 	//Constructor//
 	///////////////
 
-	ParticleSystem(){ //TODO: LL contructor stuff goes here
-		const auto [Cols, Rows] = get_terminal_size();
-		columnsY = Cols;
-		rowsX = Rows;
+	ParticleSystem(int newCol = 0, int newRow = 0){ //TODO: LL contructor stuff goes here
+		columnsY = newCol;
+		rowsX = newRow;
 /*		head = nullptr;       Kerney had me comment these out
         	tail = nullptr;
         	particleCount = 0;

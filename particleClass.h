@@ -31,7 +31,7 @@ public:
                 break;
 			case SIN:
 				x += vx;
-				y = abs(sin(x));
+				y = -(sin(x) * 10);
 				break;
             case BALLISTIC:
                 vy += 1;  // Gravity effect

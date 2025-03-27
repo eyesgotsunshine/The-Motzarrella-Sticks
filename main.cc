@@ -10,7 +10,6 @@
 #include "particleSys.h"
 #include "ebSys.cc"
 #include "jinx.cc"
-#include "jinx2.cc"
 //#include "particleGraphics.h"
 #include "Das-Motschenbacher.cc"
 using namespace std;
@@ -27,7 +26,7 @@ void Menu() {
 	cout << "3. Draw Particles\n";
 	cout << "4. Run Physics\n";
 	cout << "5. Call ParticleSystem 1 (Stefanie's)\n";
-	cout << "6. Call ParticleSystem 2 (Mark's)\n";
+	cout << "6. Call Big Man Blastoise Cannonball! (Mark's)\n";
 	cout << "7. Call ParticleSystem 3 (Evan's)\n";
 	cout << "8. Exit\n";
 	cout << "Please Choose an option: ";

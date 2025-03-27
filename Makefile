@@ -3,7 +3,7 @@ CXX = g++
 CXXFLAGS = -Wall -Wextra -std=c++17 -g -Wno-unused-variable -Wno-unused-parameter
 LIBS = -lgtest -pthread
 
-a.out: main.cc particleClass.h particleGraphics.h particleSys.h cell.h jinx.cc ebSys.cc Das-Motschenbacher.cc 
+a.out: main.cc particleClass.h particleGraphics.h particleSys.h cell.h jinx.cc jinx2.cc ebSys.cc Das-Motschenbacher.cc 
 	$(CXX) $(CXXFLAGS) main.cc $(LIBS)
 
 clean:

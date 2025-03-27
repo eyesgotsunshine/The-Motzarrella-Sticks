@@ -9,9 +9,10 @@
 #include <string>
 #include "particleSys.h"
 #include "ebSys.cc"
+#include "jinx.cc"
+#include "jinx2.cc"
 //#include "particleGraphics.h"
 #include "Das-Motschenbacher.cc"
-
 using namespace std;
 
 void die() {
@@ -148,7 +149,8 @@ int main(int argc, char **argv) {
 			cout << "This is under construction. Beep, beep.\n";
 			sm::main();
 		}  else if (choice == 6) { // Mark's particles
-           	gj::main();
+			cout << (" 'Big Man Blastiose!' | figlet | lolcat");
+           	bmb::main();
 			//cout << "This is under construction. Beep, beep.\n";
         } else if (choice == 7) { // Evan's particles
 			eb::main();

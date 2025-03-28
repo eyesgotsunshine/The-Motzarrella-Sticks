@@ -15,7 +15,7 @@
 ### - Merge Conflict Test
 >>>>>>> 0df2d4d39e680ef0b1918446f341b1714d42f437
 
-
+## Branch Merge Test
 
 ---------------
 Formating options in GitHub
